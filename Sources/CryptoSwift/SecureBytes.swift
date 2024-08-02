@@ -38,7 +38,7 @@ final class SecureBytes {
       #elseif os(WASI)
         // not supported on WASI
       #else
-        mlock(pointer.baseAddress, pointer.count)
+        mlock(pointer.baseAddress!, pointer.count)
       #endif
     }
   }
@@ -50,7 +50,7 @@ final class SecureBytes {
       #elseif os(WASI)
         // not supported on WASI
       #else
-        munlock(pointer.baseAddress, pointer.count)
+        munlock(pointer.baseAddress!, pointer.count)
       #endif
     }
   }
